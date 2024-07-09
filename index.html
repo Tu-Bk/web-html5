@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人網站-html5web</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <!-- 頁首區 -->
+    <header id="topbar">
+        <!-- logo區 -->
+        <h1 class="logo">
+            <a href="./index.html"><img src="./images/logo_b.svg" alt="個人網站logo"></a>
+        </h1>
+        <!-- 選單區 -->
+        <nav class="navihation">
+            <!-- icon btn |  ul.icon>li*3>a-->
+            <ul class="icon">
+                <li><a class="icon-fb" href="#"></a></li>
+                <li><a class="icon-ig" href="#"></a></li>
+                <li><a class="icon-line" href="#"></a></li>
+                <li><a class="but-login" href="login.html#">Login</a></li>
+            </ul>
+            <!-- main btn |  ul.menu>li*6>a-->
+            <ul class="menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="content">
+            <header class="title">
+                <h2>CONTACT US</h2>
+                <h3>聯絡我們</h3>
+            </header>
+            <form action="" method="post" name="form--contact" id="form--contact" title="聯絡我們表單">
+                <label for="username">*姓名:</label>
+                <input type="text" name="username" id="username" title='姓名欄位' placeholder="請輸入姓名" required autocomplete>
+
+                <label for="tel">連絡電話:</label>
+                <input type="tel" name="tel" id="tel" title='連絡電話' placeholder="請輸入聯絡電話" autocomplete>
+
+                <label for="email">*Email:</label>
+                <input type="email" name="email" id="email" title='email欄位' placeholder="請輸入電子信箱" readonly autocomplete>
+                <!-- maxlength=>代表限制最大字數  -->
+
+                <label for="message">留言:</label>
+                <textarea name="message" id="message" title="留言欄位" rows="10" placeholder="請輸入您的意見"></textarea>
+                <small>此表單為練習作品，不具有收集資料的功能。</small>
+
+            </form>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

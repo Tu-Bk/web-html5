@@ -1,0 +1,273 @@
+@charset "UTF-8";
+/* UTF-8一定要再行數1 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+@font-face {
+    font-family: TaipeiSansTCBeta;
+    src: url(../webfonts/TaipeiSansTCBeta-Bold.ttf);
+}
+
+/* 重置所有標籤的樣式 */
+/* 『*』代表所有標籤的意思 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 不累加內距paddin與邊框 border*/
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    /* background-color: rgb(116, 107, 95); */
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    display: block
+        /* 預設inline改為block */
+    ;
+    text-decoration: none;
+}
+
+/* 共用區 */
+
+.navihation .icon .but-login {
+    background-color: azure;
+    color: rgb(36, 43, 75);
+    width: auto !important;
+    height: 35px;
+    line-height: 30px;
+    padding: 0 20px;
+    border-radius: 99px;
+}
+
+.navihation .icon .but-login:hover {
+    background-color: #444;
+    color: rgb(36, 43, 75);
+
+}
+
+/* 頁首區 */
+#topbar {
+    /* ID用# */
+    display: flex;
+    /* 預設主軸為水平 */
+    justify-content: space-between;
+    /* 主軸(水平)均分貼齊頭尾 */
+    padding: 30px;
+    align-items: center;
+    /* 副軸(垂直)置中 */
+}
+
+.logo {
+    /* class用. */
+    width: 65px;
+    /* 相對於父元素 */
+}
+
+.navihation {
+    display: flex;
+    flex-direction: column;
+    /* 主軸轉垂直 */
+    align-items: flex-end;
+    /* 副軸(水平)至底*/
+}
+
+.navihation .icon {
+    display: flex;
+}
+
+.navihation .menu {
+    display: flex;
+}
+
+.navihation .menu a {
+    color: rgb(150, 193, 196);
+}
+
+.navihation .icon a {
+    width: 35px;
+    height: 35px;
+    border: solid 1px;
+    margin-left: 10px;
+    transition: 0.35s;
+}
+
+.icon-fb {
+    /* 只有svg圖會自動縮放，其他圖檔會使用原始尺寸 */
+    background-image: url(../images/icon-fb.svg);
+    /* 如果使用其他圖檔要使用→background-size: 100%; */
+}
+
+.icon-fb:hover {
+    /* 只有svg圖會自動縮放，其他圖檔會使用原始尺寸 */
+    background-image: url(../images/icon-fb-hover.svg);
+    /* 如果使用其他圖檔要使用→background-size: 100%; */
+}
+
+.icon-ig {
+    background-image: url(../images/icon-ig.svg);
+}
+
+.icon-ig:hover {
+    background-image: url(../images/icon-ig-hover.svg);
+}
+
+.icon-line {
+    background-image: url(../images/icon-line.svg);
+}
+
+.icon-line:hover {
+    background-image: url(../images/icon-line-hover.svg);
+}
+
+.navihation .menu {
+    display: flex;
+    margin: 15px 0;
+    /* 控制父層的外距 */
+    /* 設定盒子外部的間距 */
+}
+
+.navihation .menu li {
+    /* Menu加上隔間 */
+    border-right: solid 1PX;
+}
+
+.navihation .menu li:last-child {
+    /*移除Menu最後一個隔間 */
+    border-right: none;
+}
+
+.navihation .menu a {
+    /* color: rgb(36, 43, 75); */
+    font-size: .9rem;
+    line-height: 1;
+    margin: 0 20px;
+    border-bottom: solid 2px transparent;
+    /* 控制子層的外距 */
+    /* 設定文字外部的間距 */
+}
+
+.navihation .menu a:hover {
+    border-bottom: solid 2px rgb(36, 43, 75);
+    /* 設定滑到目標後會加上底線 */
+    transition: .35 ease-in-out;
+}
+
+/* 主要內容共用區 */
+section {
+    display: flex;
+    /* 變成水平排 */
+    flex-direction: column;
+    /* 再轉垂直排 */
+    justify-content: center;
+    /* 垂直字中 */
+    align-items: center;
+    /* 水平字中 */
+    height: 100vh;
+}
+
+.title {
+    display: flex;
+    /* 變成水平排 */
+    flex-direction: column;
+    /* 再轉垂直排 */
+    align-items: center;
+    /* 水平字中 */
+}
+
+.title h2 {
+    font-family: "TaipeiSansTCBeta", "sans-serif";
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    border-bottom: 3px solid #444;
+}
+
+.title h3 {
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    line-height: 2.5rem;
+}
+
+/* 聯絡我們 */
+
+#content {
+    /* 背景影像基本設定 */
+    background-image: url(../images/bg_contact.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* 固定背景 */
+    background-attachment: fixed;
+}
+
+#form--contact {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+#form--contact label {
+    font-size: 0.85rem;
+    line-height: 2;
+    margin-top: 1.5rem;
+}
+
+#form--contact input {
+    padding: 8px 5px;
+    color: #8f6668;
+    font-weight: 600;
+}
+
+#form--contact input,#form--contact textarea{
+    padding: 6px;
+    font-weight:600 ;
+    color: #aa8c8e;
+}
+
+#form--contact input::placeholder,#form--contact textarea::placeholder{
+    font-size:.8rem ;
+    font-weight:400 ;
+    color: #aa8c8e;
+}
+
+#form--contact small{
+    font-size:.8rem ;
+    color: #aa8c8e;
+    padding: 15px 15px;
+}
