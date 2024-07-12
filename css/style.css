@@ -78,6 +78,24 @@ a {
 
 }
 
+#form--contact input,
+#form--contact textarea,
+#topbar .menu {
+    /* border-radius: 10px; */
+    /* border: 1px solid #aa8c8e; */
+    background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.8));
+    /* ↓↓取消表單元件的預設被景色↓↓ */
+    background-color: transparent;
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.15), inset -1px -1px rgba(255, 255, 255, 0.8);
+    /* filter: drop-shadow(2px 3px rgba(0,0,0,0.6)); */
+    /* backdrop-filter: blur(10px);
+    border: none; */
+}
+
+/* ↑↑ 玻璃擬態效果↑↑ */
+
+
+
 /* 頁首區 */
 #topbar {
     /* ID用# */
@@ -88,13 +106,20 @@ a {
     padding: 30px;
     align-items: center;
     /* 副軸(垂直)置中 */
+    background-color: #8f6668;
 }
 
 .logo {
     /* class用. */
     width: 65px;
     /* 相對於父元素 */
+    /* filter: drop-shadow(2px 3px rgba(0,0,0,0.5)); */
 }
+
+.logo img {
+    filter: drop-shadow(2px 3px rgba(0, 0, 0, 0.5));
+}
+
 
 .navihation {
     display: flex;
@@ -108,9 +133,10 @@ a {
     display: flex;
 }
 
-.navihation .menu {
+/* .navihation .menu {
     display: flex;
-}
+    margin: 15px 0;
+   } */
 
 .navihation .menu a {
     color: rgb(150, 193, 196);
@@ -119,7 +145,7 @@ a {
 .navihation .icon a {
     width: 35px;
     height: 35px;
-    border: solid 1px;
+    /* border: solid 1px; */
     margin-left: 10px;
     transition: 0.35s;
 }
@@ -157,6 +183,8 @@ a {
     margin: 15px 0;
     /* 控制父層的外距 */
     /* 設定盒子外部的間距 */
+    padding: 10px;
+    border-radius: 99px;
 }
 
 .navihation .menu li {
@@ -238,36 +266,136 @@ section {
 
 #form--contact {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;/* 主軸(垂直) */
+    align-items: center;/* 副軸(水平)字中 */
     width: 35%;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 #form--contact label {
+    width: 100%;
     font-size: 0.85rem;
     line-height: 2;
     margin-top: 1.5rem;
 }
 
-#form--contact input {
+
+
+/* #form--contact input {
     padding: 8px 5px;
     color: #8f6668;
     font-weight: 600;
-}
+} */
 
-#form--contact input,#form--contact textarea{
+#form--contact input,
+#form--contact textarea {
+    width: 100%;
+    border-radius: 10px;
     padding: 6px;
-    font-weight:600 ;
+    font-weight: 600;
+    /* font-family: 'Noto Sans TC', sans-serif; */
     color: #aa8c8e;
+    backdrop-filter: blur(10px);
+    border: none;
 }
 
-#form--contact input::placeholder,#form--contact textarea::placeholder{
-    font-size:.8rem ;
-    font-weight:400 ;
-    color: #aa8c8e;
+#form--contact input:focus,
+#form--contact textarea:focus {
+    /* 修該focus預設模式 */
+    outline: 2px solid #71a2c3;
 }
 
-#form--contact small{
-    font-size:.8rem ;
-    color: #aa8c8e;
+#form--contact input::placeholder,
+#form--contact textarea::placeholder {
+    font-size: .8rem;
+    font-weight: 400;
+    color: #3e2829;
+}
+
+#form--contact small {
+    font-size: .8rem;
+    color: #765e5f;
     padding: 15px 15px;
-} 
+}
+
+/* 動態按鈕 */
+/* #btn__contact-submit{
+
+} */
+
+#btn__contact-submit {
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    height: 60px;
+    width: 210px;
+    opacity: 1;
+    background-color: #ffffff;
+    border: 1px solid rgba(22, 76, 167, 0.6);
+}
+
+#btn__contact-submit span {
+    color: #164ca7;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+}
+
+#btn__contact-submit:hover {
+    animation: rotate 0.7s ease-in-out both;
+}
+
+#btn__contact-submit:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+
+    25% {
+        transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+
+    50% {
+        transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+
+    75% {
+        transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+}

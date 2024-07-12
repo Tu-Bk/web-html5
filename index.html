@@ -52,15 +52,20 @@
                 <input type="tel" name="tel" id="tel" title='連絡電話' placeholder="請輸入聯絡電話" autocomplete>
 
                 <label for="email">*Email:</label>
-                <input type="email" name="email" id="email" title='email欄位' placeholder="請輸入電子信箱" readonly autocomplete>
+                <input type="email" name="email" id="email" title='email欄位' placeholder="請輸入電子信箱" required autocomplete>
                 <!-- maxlength=>代表限制最大字數  -->
 
                 <label for="message">留言:</label>
                 <textarea name="message" id="message" title="留言欄位" rows="10" placeholder="請輸入您的意見"></textarea>
                 <small>此表單為練習作品，不具有收集資料的功能。</small>
+                <!-- 表單按鈕一定要放在form裡面 -->
+                <button type="submit" name="btn__contact-submit" id="btn__contact-submit" title="送出按鈕">
+                    <span>送出</span>
+                </button>
             </form>
         </section>
     </main>
     <footer></footer>
 </body>
+
 </html>
