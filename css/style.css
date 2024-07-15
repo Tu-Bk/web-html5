@@ -80,7 +80,7 @@ a {
 
 #form--contact input,
 #form--contact textarea,
-#topbar .menu {
+#topbar .menu,#btn__contact-submit {
     /* border-radius: 10px; */
     /* border: 1px solid #aa8c8e; */
     background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.8));
@@ -324,27 +324,29 @@ section {
 } */
 
 #btn__contact-submit {
-    position: relative;
-    outline: none;
-    text-decoration: none;
-    border-radius: 50px;
+    /* position: relative; */
+    /* outline: none; */
+    /* text-decoration: none; */ /* 取消文字底線 */
+    border-radius: 50px;/* 定義起始位置 */
     display: flex;
     justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    text-transform: uppercase;
+    align-items: center;/* 指標樣式 */
+    cursor: pointer;/* 指標樣式：手形狀 */
+    /* text-transform: uppercase; */  /* 設定字母大寫 */
     height: 60px;
     width: 210px;
-    opacity: 1;
-    background-color: #ffffff;
-    border: 1px solid rgba(22, 76, 167, 0.6);
+    /* opacity: 1; */  /* 透明度 */
+    /* ↓↓取笑button預設值↓↓ */
+    background-color: transparent;
+    border:none;
 }
 
 #btn__contact-submit span {
-    color: #164ca7;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.7px;
+    color: #af7663;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+    padding-left: 1rem;/* 把字補回到正中間 */
 }
 
 #btn__contact-submit:hover {
