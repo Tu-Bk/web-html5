@@ -263,11 +263,36 @@ section {
     width: 80%;
     display: flex;
     margin: 15px;
+    max-width: 1440px;
+    /* 通常搭配相對單位，並設定絕對單位 */
 }
+
+
 
 .box__list .item {
     flex: 1;
     margin: 0 15px;
+    box-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    /* 設定圓角 */
+    overflow: hidden;
+    /* 設定圖片可被背景隱藏 */
+}
+
+.box__list figure {
+    height: 50vh;
+}
+
+.box__list img {
+    object-fit: cover;
+    /* 設定圖片容器 */
+    /* width: 100%; 共用區已設定 */
+    height: 100%;
+}
+
+.box__list .content {
+    padding: 15px 20px;
+    color: #444;
 }
 
 .box__list .item h1 {
@@ -276,13 +301,81 @@ section {
 }
 
 .box__list .item p {
+    /* color: #444; */
     font-size: 1rem;
-text-align: justify;/* 齊行，建議中文使用，英文是單字間距均分，建議不要使用 */
+    text-align: justify;
+    /* 齊行，建議中文使用，英文是單字間距均分，建議不要使用 */
+
+    /* 多行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 文字溢出時會出現省略號，落有設定line-clamp時，瀏覽器會自動加入 */
+    display: -webkit-box;
+    /* 彈性佈局 */
+    -webkit-box-orient: vertical;
+    /* 定義BOX垂直佈局 */
+    -webkit-line-clamp: 5;
+    /* 限制行數，超過會出現省略號 */
 }
 
 
 
 /* 最新消息區 */
+#new p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 文字溢出時會出現省略號，落有設定line-clamp時，瀏覽器會自動加入 */
+    display: -webkit-box;
+    /* 彈性佈局 */
+    -webkit-box-orient: vertical;
+    /* 定義BOX垂直佈局 */
+    -webkit-line-clamp: 5;
+    /* 限制行數，超過會出現省略號 */
+}
+
+
+/* 服務項目區 */
+#service p {
+    /* 單行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#service .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 60vh;
+    background-position: center;
+    /* 圖片字中 */
+    background-size: cover;
+    /* 圖片延展 */
+}
+
+#service a {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    /*width: 100%; 父元素的display:flex改變寬度，才需要設定width:100% */
+
+}
+
+.svc-1 {
+    background-image: url(../images/pt_svc1.jpg);
+}
+
+.svc-2 {
+    background-image: url(../images/pt_svc2.jpg);
+}
+
+.svc-3 {
+    background-image: url(../images/pt_svc3.jpg);
+}
+
+.svc-4 {
+    background-image: url(../images/pt_svc4.jpg);
+}
+
 
 /* 聯絡我們 */
 
