@@ -7,6 +7,37 @@
     src: url(../webfonts/TaipeiSansTCBeta-Bold.ttf);
 }
 
+
+/* 變數 */
+:root {
+    /* 設定固定顏色樣板 */
+    /* 灰階 */
+    --deep: #444;
+    --grey: #999;
+    --light: #f8f8f8;
+
+    /* 背景 */
+    --primry: #d4bbca;
+    --secondary: #6c8474;
+    --tertiary: #859aae;
+
+    /* 輔助 */
+    --lesser-1: #f3dcdc;
+    --lesser-2: #efdbdb;
+    --lesser-3: #cdaaab;
+    --lesser-4: #8f6b6d;
+
+    /* 透明 */
+    --alpha-w-60: rgba(255, 255, 255, 0.5);
+    --alpha-w-20: rgba(0, 0, 0, 0.2);
+    --alpha-w-40: rgba(0, 0, 0, 0.4);
+    /* 漸層 */
+    --gradient-w-a: rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.5);
+    /* 陰影 */
+    --box-shadow-g: 2px 2px 3px rgba(0, 0, 0, 0.15), inset -1px -1px rgba(255, 255, 255, 0.8);
+}
+
+
 /* 重置所有標籤的樣式 */
 /* 『*』代表所有標籤的意思 */
 * {
@@ -58,13 +89,14 @@ a {
         /* 預設inline改為block */
     ;
     text-decoration: none;
+    color: var(--deep);
 }
 
 /* 共用區 */
 
 .navihation .icon .but-login {
-    background-color: azure;
-    color: rgb(36, 43, 75);
+    background-color: var(--light);
+    color: var(--deep);
     width: auto !important;
     height: 35px;
     line-height: 30px;
@@ -74,7 +106,7 @@ a {
 
 .navihation .icon .but-login:hover {
     background-color: #444;
-    color: rgb(36, 43, 75);
+    color: var(--light);
 
 }
 
@@ -123,7 +155,7 @@ a {
 }
 
 .logo img {
-    filter: drop-shadow(2px 3px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(2px 3px var(--alpha-w-60));
 }
 
 
@@ -321,7 +353,20 @@ section {
 
 
 /* 最新消息區 */
+#new {
+    background-color: var(--primry);
+}
+
+#new .content {
+    background-color: var(--alpha-w-60);
+}
+
+#new .content:hover {
+    background-color: var(--light);
+}
+
 #new p {
+
     overflow: hidden;
     text-overflow: ellipsis;
     /* 文字溢出時會出現省略號，落有設定line-clamp時，瀏覽器會自動加入 */
@@ -335,6 +380,14 @@ section {
 
 
 /* 服務項目區 */
+#service {
+    background-color: var(--secondary);
+}
+
+#service .box__list a:hover {
+    background-color: var(--alpha-w-20);
+}
+
 #service p {
     /* 單行省略 */
     overflow: hidden;
@@ -376,6 +429,37 @@ section {
     background-image: url(../images/pt_svc4.jpg);
 }
 
+/* 相關影片區 */
+#video {
+    background-color: var(--tertiary);
+}
+
+.video{
+width: 100%;
+max-width: 1050px;
+}
+
+video {
+    width: 100%;
+}
+
+/* 關於我們區 */
+#about .content{
+    width: 65%;
+    height: 100vh;/* 高度百分比會抓父元素的高度 */
+    background-color: var(--alpha-w-40);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about p{
+    width: 90%;
+    height: 65vh;
+    overflow: auto;
+}
+
 
 /* 聯絡我們 */
 
@@ -407,7 +491,7 @@ section {
 .flower_w {
     position: absolute;
     /* 絕對定位 */
-    right: -50px;
+    right: -100px;
     top: 150px;
     transform: rotate(-50deg);
 }
