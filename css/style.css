@@ -37,6 +37,76 @@
     --box-shadow-g: 2px 2px 3px rgba(0, 0, 0, 0.15), inset -1px -1px rgba(255, 255, 255, 0.8);
 }
 
+/* 卷軸樣式 */
+::-webkit-scrollbar {
+    /* 卷軸基底顏色 */
+    width: 15px;
+    height: 15px;
+    background-color: var(--lesser-3);
+}
+
+/* 卷軸上下箭頭樣式 */
+::-webkit-scrollbar-button {
+    width: 8px;
+    height: 8px;
+    background-color: var(--deep);
+}
+
+/* 卷軸滾動手柄樣式 */
+::-webkit-scrollbar-thumb {
+    background-color: var(--lesser-1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--alpha-w-40);
+}
+
+/* 卷軸軌道樣式 */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0px 0px 5px var(--grey);
+}
+
+/* ::-webkit-scrollbar-track-piece{
+    box-shadow: 0px 1px 2px #444;
+} */
+
+/* 交界底腳 */
+::-webkit-scrollbar-corner {
+    background-color: #bcb5b5;
+}
+
+/* 多行文字欄位右下角的縮放按鈕 */
+::-webkit-resizer {
+    background-color: var(--lesser-4);
+}
+
+
+
+#about p::-webkit-scrollbar {
+    border-radius: 99px;
+}
+
+
+#about p::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    border: 0.5px solid #5b4b4b;
+}
+
+#about p::-webkit-scrollbar-track {
+    border-radius: 99px;
+}
+
+#about p::-webkit-scrollbar-button {
+    display: none;
+    /* 預設是display:none ,是因為body有設定button，所以需要另外設定取消*/
+}
+
+#about p::-webkit-scrollbar-corner {
+    border-radius: 50%;
+}
+
+
+
 
 /* 重置所有標籤的樣式 */
 /* 『*』代表所有標籤的意思 */
@@ -434,9 +504,9 @@ section {
     background-color: var(--tertiary);
 }
 
-.video{
-width: 100%;
-max-width: 1050px;
+.video {
+    width: 100%;
+    max-width: 1050px;
 }
 
 video {
@@ -444,21 +514,46 @@ video {
 }
 
 /* 關於我們區 */
-#about .content{
+#about {
+    position: relative;
+    height: 100%;
+    background-color: var(--lesser-3);
+    /* background-color: #cdc9c9; */
+}
+
+#about .content {
+    position: absolute;
+    z-index: 1;
     width: 65%;
-    height: 100vh;/* 高度百分比會抓父元素的高度 */
+    height: 100%;
+    /* 高度百分比會抓父元素的高度 */
     background-color: var(--alpha-w-40);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(5px);
 }
 
-#about p{
-    width: 90%;
+#about p {
+    width: 85%;
     height: 65vh;
-    overflow: auto;
+    /* padding: 0 20px; */
+    padding-right: 1rem;
+    overflow: scroll;
+    /* 推薦使用auto,現在用scroll只是要做練習卷軸變色 */
 }
+
+#about video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: overlay;
+    /* 混合模式 */
+    filter: brightness(120%) contrast(70%);
+    /* 濾鏡效果 */
+}
+
 
 
 /* 聯絡我們 */
