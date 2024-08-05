@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
 @font-face {
-    font-family: TaipeiSansTCBeta;
-    src: url(../webfonts/TaipeiSansTCBeta-Bold.ttf);
+    font-family: Noto Sans TC, sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Noto+Sans+TC:wght@100..900&display=swap');
 }
 
 
@@ -345,7 +345,7 @@ section {
 }
 
 .title h2 {
-    font-family: "TaipeiSansTCBeta", "sans-serif";
+    font-family: "Noto Sans TC", sans-serif;
     font-weight: bold;
     font-size: 2rem;
     letter-spacing: 0.3rem;
@@ -737,3 +737,62 @@ video {
         transform: translate3d(0, 0, 0) translateZ(0);
     }
 }
+
+
+/* 頁尾區 */
+footer {
+    /* padding: 20px; */
+    background-color: #7b6668;
+}
+
+
+footer div {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .navihation .menu{
+margin: 0 0 50px 0;
+}
+
+footer .logo{
+    margin-top: 10px;
+}
+
+
+footer .navihation .menu a {
+    margin: 0;
+    padding: 0;
+}
+
+/* 取消頁首區的間距 */
+footer .navihation .menu a {
+    font-weight: 700;
+}
+
+/* 取消子選單的邊框 */
+/* footer .navihation .submenu li{
+    border: none;
+} */
+
+
+/* 取消頁尾區全部的邊框 */
+footer .navihation .menu li {
+    border: none;
+    margin: 10px;
+    
+}
+
+/*  中型設備(ipad aip */ 
+@media (max-width:768px) {/* 820~641 */}
+footer div{
+    display: none;
+}
+footer{
+    text-align: center;
+}
+
+
+
+/* 小型設備(手機板) */
+@media (max-width:576px) {/* 640以下 */}

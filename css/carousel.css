@@ -1,6 +1,6 @@
 /* Section-1 Styles */
 #banner {
-    height: 38em;
+    /* height: 38em; */
     color: #fff;
     background-color: #222;
 }
@@ -37,24 +37,34 @@
 }
 
 #banner .content-slider .slider .banner .banner-inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    padding-top: 6em;
-    background-image: linear-gradient(rgba(243, 129, 129, 0.9), rgba(252, 227, 138, 0.9));
+    /* padding-top: 6em; */
+    background-image: linear-gradient(rgba(235, 225, 225, 0.2), rgba(214, 206, 189, 0.5));
     box-sizing: border-box;
+    text-shadow: 0 0 10px var(--alpha-w-40);
 }
 
 #banner .content-slider .slider .banner .banner-inner-wrapper h2 {
     padding-bottom: 0.3em;
-    font-family: "Kaushan Script", cursive;
+    font-family: Noto Sans TC, sans-serif;
     font-weight: 400;
     font-size: 2.5em;
     text-transform: none;
+    /* text-shadow: 0 0 10px var(--alpha-w-40); */
 }
 
 #banner .content-slider .slider .banner .banner-inner-wrapper h1 {
+    font-family: 'Noto Sans TC', sans-serif;
     font-size: 6em;
     line-height: 95%;
 }
+
+
+
 
 #banner .content-slider .slider .banner .banner-inner-wrapper .line {
     display: block;
@@ -70,6 +80,7 @@
 }
 
 #banner .content-slider .slider .banner .banner-inner-wrapper .learn-more-button a {
+    display: inline-block;
     padding: 0.5em 2em;
     text-align: center;
     font-family: Montserrat, sans-serif;
@@ -80,8 +91,8 @@
 }
 
 #banner .content-slider .slider .banner .banner-inner-wrapper .learn-more-button a:hover {
-    color: #e88382;
-    border-color: #e88382;
+    color: var(--alpha-w-60);
+    border-color: var(--alpha-w-20);
     transition: 0.3s;
 }
 
@@ -129,7 +140,7 @@
 #banner .content-slider nav .controls label {
     position: relative;
     display: inline-block;
-    width: 20%;
+    width: 16%;
     height: 3.1em;
     overflow: hidden;
     margin: 0 1em;
@@ -138,11 +149,16 @@
     text-transform: uppercase;
     font-family: Montserrat, sans-serif;
     font-size: 1em;
-    color: #f6eac5;
+    color: #eae7de;
     font-weight: 400;
     cursor: pointer;
     transition: all 0.3s;
 }
+
+
+
+
+
 
 #banner .content-slider nav .controls label .progressbar {
     position: absolute;
@@ -150,7 +166,7 @@
     left: 0;
     height: 3px;
     width: 100%;
-    background: #f6eac5;
+    background: #dead7c;
     z-index: 100;
 }
 
@@ -159,7 +175,7 @@
     width: inherit;
     height: inherit;
     margin-left: -100%;
-    background: #e88382;
+    background: #a7898d;
 }
 
 #banner .content-slider nav .controls label span {
@@ -214,5 +230,19 @@
 
     to {
         margin-left: 0;
+    }
+}
+
+
+/* 小型設備(手機板) */
+@media (max-width:640px) {/* 640以下 */
+    #banner .content-slider nav .controls label {
+margin:  0 3px;
+    }
+    #banner .content-slider .slider .banner .banner-inner-wrapper h1 {
+font-size: 2.5em;
+    }
+    #banner .content-slider .slider .banner .banner-inner-wrapper h2 {
+font-size: 2.5em;
     }
 }
