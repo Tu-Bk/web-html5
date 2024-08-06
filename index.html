@@ -19,24 +19,32 @@
         <h1 class="logo">
             <a href="./index.html"><img src="./images/logo_b.svg" alt="個人網站logo"></a>
         </h1>
-        <!-- 選單區 -->
-        <nav class="navihation">
-            <!-- icon btn |  ul.icon>li*3>a-->
-            <ul class="icon">
-                <li><a class="icon-fb" href="#"></a></li>
-                <li><a class="icon-ig" href="#"></a></li>
-                <li><a class="icon-line" href="#"></a></li>
-                <li><a class="but-login" href="login.html#">Login</a></li>
-            </ul>
-            <!-- main btn |  ul.menu>li*6>a-->
-            <ul class="menu">
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">SERVICE</a></li>
-                <li><a href="#">VIDEO</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">CONTACT</a></li>
-            </ul>
+        <nav class="navbar">
+            <!-- 三條線的漢堡按鈕 -->
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <!-- 選單區 -->
+            <div class="navihation">
+                <!-- icon btn |  ul.icon>li*3>a-->
+                <ul class="icon">
+                    <li><a class="icon-fb" href="#"></a></li>
+                    <li><a class="icon-ig" href="#"></a></li>
+                    <li><a class="icon-line" href="#"></a></li>
+                    <li><a class="but-login" href="login.html#">Login</a></li>
+                </ul>
+                <!-- main btn |  ul.menu>li*6>a-->
+                <ul class="menu">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">NEWS</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">VIDEO</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
     <main>
@@ -193,6 +201,7 @@
                         </div>
                     </a></article>
             </div>
+            <a href="#" class="btn-s">more</a>
         </section>
         <!-- 服務項目區 -->
         <section id="service">
@@ -249,6 +258,7 @@
                     </a>
                 </li>
             </ul>
+            <a href="#" class="btn-s">more</a>
         </section>
         <section id="video">
             <header>
@@ -380,7 +390,8 @@
                     provident iure quidem accusantium magnam repellendus expedita tempore, amet deleniti optio placeat
                     consequatur pariatur. Blanditiis repudiandae recusandae, molestiae beatae hic, tenetur ad
                     temporibus,
-                    officia ipsam fugit cum aliquid. Aliquid corrupti laboriosam obcaecati nostrum minus?</p>
+                    officia ipsam fugit cum aliquid. Aliquid corrupti laboriosam obcaecati nostrum minus?
+                </p>
             </div>
             <!-- video無法使用CSS設定為背景，他一定要存在於HTML中 -->
             <video src="./images/flower.mp4" autoplay muted loop></video>
@@ -479,6 +490,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- 換圖輪播JS，因為是JQuery，所以一定要先執行JQuery原始檔，要放在他下面 -->
     <script src="./js/carourel.js"></script>
+    <!-- 自訂的JS，一定要寫在最下面，要最後執行 -->
+    <script src="./js/script.js"></script>
 
 </body>
 

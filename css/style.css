@@ -108,6 +108,8 @@
 
 
 
+
+
 /* 重置所有標籤的樣式 */
 /* 『*』代表所有標籤的意思 */
 * {
@@ -217,6 +219,7 @@ a {
     /* background-color: #8f6668; */
 }
 
+/* logo區 */
 .logo {
     /* class用. */
     width: 65px;
@@ -229,6 +232,42 @@ a {
 }
 
 
+/* 漢堡按鈕區 */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    /* 主軸(垂直) */
+    align-items: flex-end;
+    /* 副軸(水平):置底(靠右) */
+}
+
+.hamburger {
+    /* 修改button在瀏覽器上的樣式 */
+    background-color: transparent;
+    border: none;
+    margin: 5px 10px 10px 0;
+    /* display: none; */
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #444;
+    margin: 5px auto;
+}
+
+
+@media (min-width:641px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+
+
+
+/* 主選單曲 */
 .navihation {
     display: flex;
     flex-direction: column;
@@ -321,6 +360,26 @@ a {
     transition: .35 ease-in-out;
 }
 
+@media(max-width:820px) {
+    .navihation .menu {
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+    }
+
+    .navihation .menu li {
+        border: none;
+    }
+
+    .navihation .menu a {
+        margin: 15px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+
 /* 主要內容共用區 */
 section {
     display: flex;
@@ -367,12 +426,20 @@ section {
     margin: 15px;
     max-width: 1440px;
     /* 通常搭配相對單位，並設定絕對單位 */
+    margin-bottom: 50px;
+}
+
+@media (max-width:640px) {
+    .box__list {
+        margin-bottom: 10px;
+    }
 }
 
 
 
 .box__list .item {
     flex: 1;
+    /* RWD交換主軸方向，flex:1變成高度，flex權重大於寬高 */
     margin: 0 15px;
     box-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
@@ -418,6 +485,7 @@ section {
     /* 定義BOX垂直佈局 */
     -webkit-line-clamp: 5;
     /* 限制行數，超過會出現省略號 */
+
 }
 
 
@@ -447,6 +515,45 @@ section {
     -webkit-line-clamp: 5;
     /* 限制行數，超過會出現省略號 */
 }
+
+#new .btn-s {
+    border: 0.5px solid #444;
+    border-radius: 99px;
+    padding: 10px;
+}
+
+/* 平以上尺寸 */
+@media (min-width:821px) {
+
+    /* 820~641 */
+    #new .btn-s {
+        display: none;
+    }
+}
+
+
+
+/*  中型設備(ipad aip */
+@media (max-width:820px) {
+
+    /* 820~641 */
+    #new .item:last-child {
+        display: none;
+    }
+
+}
+
+
+/* 小型設備(手機板) */
+@media (max-width:640px) {
+
+    /* 640以下 */
+    #new .item:nth-child(n+2) {
+        display: none;
+    }
+}
+
+
 
 
 /* 服務項目區 */
@@ -480,8 +587,15 @@ section {
     background-color: rgba(0, 0, 0, 0.5);
     color: #ffffff;
     /*width: 100%; 父元素的display:flex改變寬度，才需要設定width:100% */
-
 }
+
+#service .btn-s {
+    border: 0.5px solid #444;
+    border-radius: 99px;
+    padding: 10px;
+    background-color: #e1d4c7;
+}
+
 
 .svc-1 {
     background-image: url(../images/pt_svc1.jpg);
@@ -499,6 +613,68 @@ section {
     background-image: url(../images/pt_svc4.jpg);
 }
 
+/* 平以上尺寸 */
+/* 821px以上 */
+@media (min-width:821px) {
+
+    /* 820~641 */
+    #service .btn-s {
+        display: none;
+    }
+}
+
+
+/*  中型設備(ipad aip) */
+/* 820PX以下 */
+@media (max-width:820px) {
+
+    /* 820~641 */
+    #service .box__list {
+        flex-direction: column;
+        /* 轉垂直後要自己把高撐開不然會很扁 */
+        /* RWD交換主軸方向，flex:1變成高度，flex權重大於寬高 */
+        /* flex:1 高度均分時，父元素預設為抓內容尺寸，需另外設定高度使其空間均分 */
+        height: 60vh;
+    }
+
+    #service .item {
+        margin-bottom: 20px;
+    }
+
+    #service .item:nth-child(n+3) {
+        display: none;
+
+    }
+}
+
+
+/* 小型設備(手機板) */
+@media (max-width:640px) {
+    /* 640以下 */
+
+    #service .box__list {
+        flex-direction: column;
+        /* 轉垂直後要自己把高撐開不然會很扁 */
+        /* RWD交換主軸方向，flex:1變成高度，flex權重大於寬高 */
+        /* flex:1 高度均分時，父元素預設為抓內容尺寸，需另外設定高度使其空間均分 */
+        height: 70vh;
+    }
+
+    #service .item {
+        margin-bottom: 20px;
+    }
+
+    #service .item:nth-child(n+3) {
+        display: none;
+
+    }
+
+}
+
+
+
+
+
 /* 相關影片區 */
 #video {
     background-color: var(--tertiary);
@@ -513,10 +689,32 @@ video {
     width: 100%;
 }
 
+/*  中型設備(ipad aip */
+@media (max-width:820px) {
+
+    /* 820~641 */
+    #video {
+        height: auto;
+        padding: 5px 0;
+    }
+}
+
+
+/* 小型設備(手機板) */
+@media (max-width:640px) {
+
+    /* 640以下 */
+    #video {
+        height: auto;
+        padding: 5px 0;
+    }
+}
+
+
 /* 關於我們區 */
 #about {
     position: relative;
-    height: 100%;
+    /* height: 100%; */
     background-color: var(--lesser-3);
     /* background-color: #cdc9c9; */
 }
@@ -555,6 +753,27 @@ video {
 }
 
 
+/*  中型設備(ipad aip */
+@media (max-width:820px) {
+
+    /* 820~641 */
+    #about .content {
+        width: 85%;
+    }
+
+}
+
+
+/* 小型設備(手機板) */
+@media (max-width:640px) {
+
+    /* 640以下 */
+    #about .content {
+        width: 85%;
+        /* height: 100%; */
+    }
+}
+
 
 /* 聯絡我們 */
 
@@ -575,10 +794,11 @@ video {
 .flower_r {
     position: absolute;
     /* 絕對定位 */
-    left: -50px;
+    left: -200px;
     bottom: 100px;
     width: 400px;
     transform: rotate(30deg);
+
 }
 
 
@@ -600,6 +820,46 @@ video {
     width: 35%;
     font-family: 'Noto Sans TC', sans-serif;
 }
+
+
+/*  中型設備(ipad aip */
+@media (max-width:820px) {
+
+    /* 820~641 */
+    #form--contact {
+        width: 50%;
+    }
+
+    .flower_r {
+        bottom: -50px;
+    }
+}
+
+
+/* 小型設備(手機板) */
+@media (max-width:640px) {
+
+    /* 640以下 */
+    .flower_r,
+    .flower_w {
+        display: none;
+    }
+
+    #form--contact {
+        width: 60%;
+    }
+
+    #content {
+        height: 100%;
+        padding: 10px 0 30px 0;
+    }
+
+}
+
+
+
+
+
 
 #form--contact label {
     width: 100%;
@@ -751,11 +1011,11 @@ footer div {
     justify-content: space-between;
 }
 
-footer .navihation .menu{
-margin: 0 0 50px 0;
+footer .navihation .menu {
+    margin: 0 0 50px 0;
 }
 
-footer .logo{
+footer .logo {
     margin-top: 10px;
 }
 
@@ -780,19 +1040,35 @@ footer .navihation .menu a {
 footer .navihation .menu li {
     border: none;
     margin: 10px;
-    
+
 }
 
-/*  中型設備(ipad aip */ 
-@media (max-width:768px) {/* 820~641 */}
-footer div{
-    display: none;
-}
-footer{
-    text-align: center;
+/*  中型設備(ipad aip */
+@media (max-width:768px) {
+
+    /* 820~641 */
+    footer div {
+        display: none;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+
+
+
 }
 
+
+
+/*  中型設備(ipad aip */
+@media (max-width:820px) {
+    /* 820~641 */
+}
 
 
 /* 小型設備(手機板) */
-@media (max-width:576px) {/* 640以下 */}
+@media (max-width:640px) {
+    /* 640以下 */
+}
