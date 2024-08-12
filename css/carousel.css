@@ -233,16 +233,36 @@
     }
 }
 
+/* 中型設備(1024螢幕) */
+@media (max-width:1024px) {
+    /* 1024以下 */
+    #banner .content-slider nav .controls label {
+        margin: 0 5px;
+    }
+}
+
+/* 中小型設備(平板) */
+@media (max-width:820px) {
+    /* 820以下 */
+    #banner .content-slider nav .controls label {
+        margin: 0 5px;
+    }
+}
+
 
 /* 小型設備(手機板) */
-@media (max-width:640px) {/* 640以下 */
+@media (max-width:640px) {
+
+    /* 640以下 */
     #banner .content-slider nav .controls label {
-margin:  0 3px;
+        margin: 0 3px;
     }
+
     #banner .content-slider .slider .banner .banner-inner-wrapper h1 {
-font-size: 2.5em;
+        font-size: 2.5em;
     }
+
     #banner .content-slider .slider .banner .banner-inner-wrapper h2 {
-font-size: 2.5em;
+        font-size: 2.5em;
     }
 }

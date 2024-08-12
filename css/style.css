@@ -166,6 +166,19 @@ a {
 
 /* 共用區 */
 
+#gotop {
+    height: 50px;
+    width: 50px;
+    background-color: var(--alpha-w-20);
+    border-radius: 50%;
+    padding: 5px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    cursor: pointer;
+}
+
 .navihation .icon .but-login {
     background-color: var(--light);
     color: var(--deep);
@@ -195,7 +208,10 @@ a {
     /* filter: drop-shadow(2px 3px rgba(0,0,0,0.6)); */
     /* backdrop-filter: blur(10px);
     border: none; */
+    backdrop-filter: blur(5px);
 }
+
+
 
 /* ↑↑ 玻璃擬態效果↑↑ */
 
@@ -249,13 +265,7 @@ a {
     /* display: none; */
 }
 
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #444;
-    margin: 5px auto;
-}
+
 
 
 @media (min-width:641px) {
@@ -264,6 +274,88 @@ a {
     }
 }
 
+
+
+@media (max-width:640px) {
+    #topbar {
+        align-items: flex-start;
+    }
+
+    .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #444;
+        margin: 5px auto;
+        transition: .3s;
+    }
+
+    .hamburger.is-active .bar:nth-child(1) {
+        transform: rotate(45deg) translateY(11px);
+    }
+
+    .hamburger.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.is-active .bar:nth-child(3) {
+        transform: rotate(-45deg) translateY(-11px);
+    }
+
+    #topbar .navihation {
+        display: none;
+        align-items: center;
+        /* 副軸(水平)置中 */
+        padding: 10px;
+        border-radius: 15px;
+        /* 玻璃擬態效果 */
+        background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.8));
+        /* ↓↓取消表單元件的預設被景色↓↓ */
+        background-color: var(--alpha-w-60);
+        box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.15), inset -1px -1px rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(5px);
+        /* 動畫效果 */
+        animation: hide 3s both;
+    }
+
+    #topbar .navihation.show {
+        display: flex;
+        /* 動畫效果 */
+        animation: show 3s both;
+    }
+
+    @keyframes hide {
+        from {
+            opacity: 1;
+            display: flex;
+        }
+
+        to {
+            opacity: 0;
+            display: none;
+        }
+    }
+
+    @keyframes show {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    #topbar .menu {
+        flex-direction: column;
+        order: -1;
+        background-image: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        background-color: transparent;
+
+    }
+}
 
 
 
@@ -286,7 +378,8 @@ a {
    } */
 
 .navihation .menu a {
-    color: rgb(150, 193, 196);
+    /* color: rgb(150, 193, 196); */
+    color: #444;
 }
 
 .navihation .icon a {
@@ -1021,6 +1114,8 @@ footer .logo {
 
 
 footer .navihation .menu a {
+    display: flex;
+    justify-content: center;
     margin: 0;
     padding: 0;
 }
@@ -1054,9 +1149,6 @@ footer .navihation .menu li {
     footer {
         text-align: center;
     }
-
-
-
 
 }
 
