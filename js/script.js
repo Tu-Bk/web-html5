@@ -18,7 +18,31 @@ $(function () {/*← document ready 一個JS檔只要有寫一次就可以 */
     $('.menu a').click(function () {
         let btn = $(this).attr('href');/* attr => 代表屬性的意思 */
         let pos = $(btn).offset();/* offset => 抓相對定位的座標位置 */
-        $('html,body').animate({scrollTop:pos.top},1000);
+        $('html,body').animate({ scrollTop: pos.top }, 1000);
         /* animate =>代表動畫的意思   scrollTop => 代表卷軸的意思   1000 => 代表1秒的意思*/
     });
+
+
+    /* 滑動至頂 */
+    $('#gotop').click(function () {
+        $('html,body').animate({ scrollTop: 0 }, 1000);
+    });
+
+
+    /* 至頂按鈕淡出淡入 */
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+            $('#gotop').stop().fadeTo('fast', 1);
+        } else {
+            $('#gotop').stop().fadeOut('fast');
+        }
+    });
+
+
+});
+
+
+/* JQuery Smoove */
+$('.smoove').smoove({
+    offset: '20%',
 });
