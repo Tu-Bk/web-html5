@@ -1,0 +1,10 @@
+@use'reset';
+@use 'variables' as *;
+/* @use 可以整份檔案內容全部匯入，也可以調用 */
+/* 星號表示直接調用 */
+.navigation {
+    color:map-get($color,lesser-5);
+    background: {
+        // color: v.$lesser-1;
+    }
+}
