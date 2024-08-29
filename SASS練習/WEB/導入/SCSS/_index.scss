@@ -1,0 +1,4 @@
+@forward '../@forward/color';
+@forward '../@forward/font';
+@forward '../@forward/size';
+// forward一定要用use調用，自動抓資料夾中的_index.scss檔案

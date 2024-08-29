@@ -1,11 +1,70 @@
-@import 'variables';
-@import'reset';
+@use 'variables';
+@use'reset';
+@use'_index';
+@use'./function/index' as *;
+// @use'./function/extend' as *;
+// @use'./function/mixin' as *;
+// as *代表指使用裡面的部分功能
+// as * 不使用則代表全部功能使用
 
 /* 整份檔案內容全部匯入 */
 .navigation {
-    color: map-get($color, lesser-5);
+    // color: map-get($color, lesser-5);
 
     background: {
         // color: $lesser-1;
     }
+}
+
+#form--contact input,
+#form--contact textarea,
+#topbar .menu,
+#btn__contact-submit {
+    @extend %glassmorphism;
+    width: 100%;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+
+
+#btn__contact-submit {
+    @extend %glassmorphism;
+    border-radius: 50px;
+    @include flex-center;
+    cursor: pointer;
+    height: 60px;
+    width: 210px;
+    background-color: transparent;
+    @include border1(6px, #777);
+}
+
+.icon {
+    @each $social in ig, line {
+
+        .icon-#{$social} {
+            background-image: url(../images/icon-#{$social}.svg);
+
+            &:hover {
+                background-image: url(../images/icon-#{$social}-hover.svg);
+            }
+        }
+
+    }
+}
+
+#topbar {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    @include flex-align-center;
+    justify-content: space-between;
+    padding: 30px;
+    @include border1(1px, red);
+}
+
+section {
+    @include flex-center;
+    flex-direction: column;
+    height: 100vh;
 }
