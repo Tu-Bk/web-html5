@@ -1,0 +1,19 @@
+/* 色彩規範 */
+$color: (
+    // 灰階
+    deep:#444,
+    grey:#999,
+    light:#fffefe,
+    // 主色
+    primry:#e70112,
+    // 輔助色
+    lesser-1: #b20722,
+    lesser-2:#bc00b7,
+    lesser-3:#23b2ff,
+    // 數列不可以列入map-get，需要獨立一個變數
+    // 漸層
+    // gradient-w-a:rgba(255, 255, 255, 0.15),
+    // rgba(255, 255, 255, 0.5) // 陰影
+    // // $box-shadow-g: 2px 2px 3px rgba(0, 0, 0, 0.15),
+    // //     inset -1px -1px rgba(255, 255, 255, 0.8)
+);

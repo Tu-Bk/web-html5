@@ -1,0 +1,15 @@
+// 間距  map-get($interval,m)
+$interval: (
+    s:5px,
+    m:10px,
+    l:15px,
+);
+
+// 最大寬度
+$max-width: (
+    s:800px,
+    m:1000px,
+    l:1200px,
+    XL:1400px,
+    XXl:1600px
+);

@@ -1,0 +1,368 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap");
+/* 重置所有標籤的樣式 */
+/* 『*』代表所有標籤的意思 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* 不累加內距paddin與邊框 border*/
+}
+
+/* 重置字體 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  /* background-color: rgb(116, 107, 95); */
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 重置圖片 */
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 重置連接 */
+a {
+  /* 預設inline改為block */
+  text-decoration: none;
+  color: var(--deep);
+}
+
+/* 色彩規範 */
+main, main section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.basic-btn {
+  color: #444;
+  background-color: #e70112;
+  font-size: 1.85rem;
+  font-weight: 700;
+  padding: 10px 15px;
+  border-radius: 99px;
+  border: 3px solid transparent;
+  transition: 0.4s ease-in-out;
+}
+.basic-btn:hover {
+  color: #fffefe;
+  background-color: #444;
+  border: 3px solid black;
+}
+
+body {
+  font-family: "Catamaran", sans-serif;
+  color: #fffefe;
+}
+
+.basic-btn {
+  display: inline-block;
+}
+
+header {
+  position: fixed;
+}
+
+main {
+  flex-direction: column;
+}
+main section {
+  width: 100%;
+  height: 100vh;
+}
+
+#banner {
+  background-image: url(../images/bg-pattern-logos.png), linear-gradient(165deg, #e70112 15%, #b20722 75%);
+  overflow: hidden;
+}
+#banner > div {
+  flex: 1;
+}
+#banner .content {
+  padding: 35px;
+}
+#banner .content h2 {
+  font-size: 11rem;
+  font-weight: 900;
+  line-height: 7rem;
+}
+#banner .content h2 span {
+  font-size: 1.85rem;
+  font-weight: 800;
+}
+#banner .content p {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  margin: 25px 0;
+}
+#banner .photo {
+  position: relative;
+  height: 100%;
+  /* 讓圖片置頂 */
+}
+#banner .photo figure {
+  position: absolute;
+}
+#banner .photo .mario1 {
+  width: 50%;
+  animation: mario1 12s 0s ease-in-out both infinite;
+  /* 3張各4s  共12s */
+}
+@keyframes mario1 {
+  0% {
+    top: 100vh;
+    left: -5%;
+  }
+  10% {
+    top: 10vh;
+    left: -5%;
+  }
+  20% {
+    top: 10vh;
+    left: -5%;
+  }
+  30% {
+    top: 100vh;
+    left: -5%;
+  }
+  100% {
+    top: 100vh;
+    left: -5%;
+  }
+}
+#banner .photo .luigi {
+  width: 40%;
+  animation: luigi 12s 0.35s ease-in-out both infinite;
+  /* 3張各4s  共12s */
+}
+@keyframes luigi {
+  0% {
+    top: 100vh;
+    right: 15%;
+  }
+  10% {
+    top: 20vh;
+    right: 15%;
+  }
+  20% {
+    top: 20vh;
+    right: 15%;
+  }
+  30% {
+    top: 100vh;
+    right: 15%;
+  }
+  100% {
+    top: 100vh;
+    right: 15%;
+  }
+}
+#banner .photo .brick {
+  width: 60%;
+  animation: brick 12s 0.35s ease-in-out both infinite;
+  /* 3張各4s  共12s */
+}
+@keyframes brick {
+  0% {
+    top: 10vh;
+    right: -100%;
+  }
+  10% {
+    top: 10vh;
+    right: -5%;
+  }
+  20% {
+    top: 10vh;
+    right: -5%;
+  }
+  30% {
+    top: 10vh;
+    right: -100%;
+  }
+  100% {
+    top: 100vh;
+    right: -100%;
+  }
+}
+#banner .photo .mario2 {
+  width: 50%;
+  animation: mario2 12s 4s ease-in-out both infinite;
+  /* 3張各4s  共12s */
+}
+@keyframes mario2 {
+  0% {
+    top: 100vh;
+    left: -5%;
+  }
+  10% {
+    top: 10vh;
+    left: -5%;
+  }
+  20% {
+    top: 10vh;
+    left: -5%;
+  }
+  30% {
+    top: 100vh;
+    left: -5%;
+  }
+  100% {
+    top: 100vh;
+    left: -5%;
+  }
+}
+#banner .photo .peach {
+  width: 50%;
+  animation: peach 12s 4s ease-in-out both infinite;
+  /* 3張各4s  共12s */
+}
+@keyframes peach {
+  0% {
+    top: 100vh;
+    right: 25%;
+  }
+  10% {
+    top: 1vh;
+    right: 25%;
+  }
+  20% {
+    top: 1vh;
+    right: 25%;
+  }
+  30% {
+    top: 100vh;
+    right: 25%;
+  }
+  100% {
+    top: 100vh;
+    right: 25%;
+  }
+}
+#banner .photo .pipe {
+  width: 50%;
+  animation: pipe 12s 4s ease-in-out both infinite;
+  /* 3張各4s  共12s */
+}
+@keyframes pipe {
+  0% {
+    top: 100vh;
+    right: -8%;
+  }
+  10% {
+    top: 40vh;
+    right: -8%;
+  }
+  20% {
+    top: 40vh;
+    right: -8%;
+  }
+  30% {
+    top: 100vh;
+    right: -8%;
+  }
+  100% {
+    top: 100vh;
+    right: -8%;
+  }
+}
+#banner .photo .mario3 {
+  width: 60%;
+  animation: mario3 12s 8s ease-in-out both infinite;
+}
+@keyframes mario3 {
+  0% {
+    top: 100vh;
+    left: -15%;
+  }
+  10% {
+    top: 20vh;
+    left: -15%;
+  }
+  20% {
+    top: 20vh;
+    left: -15%;
+  }
+  30% {
+    top: 100vh;
+    left: -15%;
+  }
+  100% {
+    top: 100vh;
+    left: -15%;
+  }
+}
+#banner .photo .toad {
+  width: 40%;
+  animation: toad 12s 8s ease-in-out both infinite;
+  /* 3張各4s  共12s */
+}
+@keyframes toad {
+  0% {
+    top: 100vh;
+    right: 25%;
+  }
+  10% {
+    top: 0vh;
+    right: 25%;
+  }
+  20% {
+    top: 0vh;
+    right: 25%;
+  }
+  30% {
+    top: 100vh;
+    right: 25%;
+  }
+  100% {
+    top: 100vh;
+    right: 25%;
+  }
+}
+#banner .photo .star {
+  width: 50%;
+  animation: star 12s 8s ease-in-out both infinite;
+  /* 3張各4s  共12s */
+}
+@keyframes star {
+  0% {
+    top: 100vh;
+    right: 0%;
+  }
+  10% {
+    top: 50vh;
+    right: 0%;
+  }
+  20% {
+    top: 50vh;
+    right: 0%;
+  }
+  30% {
+    top: 100vh;
+    right: 0%;
+  }
+  100% {
+    top: 100vh;
+    right: 0%;
+  }
+}/*# sourceMappingURL=style.css.map */
